@@ -1,7 +1,11 @@
 <?php
 // DIC configuration
+/** @var Pimple\Container $container */
 
 $container = $app->getContainer();
+
+// App Service Providers
+$container->register(new \AweProject\Services\Mailer\MailServiceProvider());
 
 // view renderer
 $container['renderer'] = function ($c) {
